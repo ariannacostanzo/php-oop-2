@@ -1,5 +1,5 @@
 <?php 
-
+//*animale
 class Animal
 {
     public $icon;
@@ -14,11 +14,11 @@ class Animal
         if($category == 'dog') {
             $this->icon = '<i style="color: brown"; class="fa-solid fa-dog"></i>';
         } else if ($category == 'cat') {
-            $this->icon = '<i style="color: grey; class="fa-solid fa-cat"></i>';
+            $this->icon = '<i style="color: #cc7b39"; class="fa-solid fa-cat"></i>';
         } else if ($category == 'bird') {
-            $this->icon = '<i style="color: lightblue; class="fa-solid fa-kiwi-bird"></i>';
+            $this->icon = '<i style="color: #3b76d4"; class="fa-solid fa-kiwi-bird"></i>';
         } else if ($category == 'fish') {
-            $this->icon = '<i style="color: blue; class="fa-solid fa-fish-fins"></i>';
+            $this->icon = '<i style="color: red"; class="fa-solid fa-fish-fins"></i>';
         } else {
             $this->icon = 'animale sconosciuto';
         }
@@ -26,6 +26,7 @@ class Animal
 
 }
 
+//*classi animali
 class Dog extends Animal 
 {
     public function __construct($category) {
@@ -51,6 +52,7 @@ class Fish extends Animal
     }
 }
 
+//*prodotti
 class Product 
 {
     public $animal;
@@ -76,17 +78,33 @@ class Product
         return ucfirst($this->type);
     }
 
+    public function getTitle() {
+        if (strlen($this->title) > 25) {
+            $this->title = substr($this->title, 0, 25) . '...';
+        }
+        return $this->title;
+    }
+
 }
 
-
+//*tipi di animali
 $dog = new Dog('dog');
 $cat = new Cat('cat');
 $bird = new Bird('bird');
 $fish = new Fish('fish');
 
+//*istanze di prodotti
+
 $prodotto1 = new Product($dog, 'Royal Canin Mini Adult', 25, 'cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000');
+$prodotto2 = new Product($dog, 'Almo Nature Holistic Maintenance Medium Large Tonno e Riso', 15, 'cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/245173/almo-nature-holistic-cane-adult-medium-pollo-e-riso.jpg');
+$prodotto3 = new Product($cat, 'Almo Nature Cat Daily Lattina', 18, 'cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/245336/almo-daily-menu-cat-400-gr-vitello.jpg');
+$prodotto4 = new Product($fish, 'Mangime per Pesci Guppy in Fiocchi', 10, 'cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/272714/tetra-guppy-mini-flakes.jpg' );
+$prodotto5 = new Product($bird, 'Voliera Wilma in Legno', 180, 'accessorio', 'https://arcaplanet.vtexassets.com/arquivos/ids/258384/voliera-wilma1.jpg');
+$prodotto6 = new Product($fish, 'Cartucce Filtranti per Filtro EasyCrystal', 45, 'accessorio', 'https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg');
+$prodotto7 = new Product($cat, 'Kong Classic', 4, 'gioco', 'https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg');
+$prodotto8 = new Product($cat, 'Topini di peluche Trixie', 7, 'gioco', 'https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg');
 
-
+$products = [$prodotto1, $prodotto2, $prodotto3, $prodotto4, $prodotto5, $prodotto6, $prodotto7, $prodotto8];
 
 ?>
 
@@ -106,69 +124,19 @@ $prodotto1 = new Product($dog, 'Royal Canin Mini Adult', 25, 'cibo', 'https://ar
 <body>
     <div class="container">
         <div class="row">
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+            <?php foreach($products as $product): ?>
+                <div class="card">
+                    <div class="content">
+                        <h3 class="title"><?= $product->getTitle() ?></h3>
+                        <figure>
+                            <img class="product-img" src="<?= $product->image?>" alt="<?= $product->title ?>">
+                        </figure>
+                        <p class="product-for">Prodotto per: <?= $product->animal->icon ?></p>
+                        <p class="price"> Prezzo: <?= $product->getPrice() ?></p>
+                        <p class="product-type">Tipo di articolo: <?= $product->getType() ?></p>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h3 class="title"><?= $prodotto1->title ?></h3>
-                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
-                </div>
-            </div>
+            <?php endforeach ?>
             
         </div>
     </div>
