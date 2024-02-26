@@ -1,7 +1,8 @@
 <?php 
 
+//?animal
 require __DIR__ . '/models/animal/animal.php';
-
+//?product
 require __DIR__ . '/models/product/product.php';
 
 //*tipi di animali
@@ -20,9 +21,13 @@ $prodotto5 = new Product($bird, 'Voliera Wilma in Legno', 180, 'accessorio', 'ht
 $prodotto6 = new Product($fish, 'Cartucce Filtranti per Filtro EasyCrystal', 45, 'accessorio', 'https://arcaplanet.vtexassets.com/arquivos/ids/272741/tetra-easycrystal-filterpack-250-300.jpg');
 $prodotto7 = new Product($dog, 'Kong Classic', 4, 'gioco', 'https://arcaplanet.vtexassets.com/arquivos/ids/256599/kong-classic1.jpg');
 $prodotto8 = new Product($cat, 'Topini di peluche Trixie', 7, 'gioco', 'https://arcaplanet.vtexassets.com/arquivos/ids/223852/trixie-gatto-gioco-active-mouse-peluche.jpg');
+$prodotto9 = new Product($bird, 'Spirale in corda', 11, 'gioco', 'https://shop-cdn-m.mediazs.com/bilder/spirale/in/corda/3/400/36183_PLA_Seilspirale_3_3.jpg');
+$prodotto10 = new Product($cat, 'Tiragraffi Casetta di pan di zenzero con scala', 111, 'gioco', 'https://shop-cdn-m.mediazs.com/bilder/tiragraffi/casetta/di/pan/di/zenzero/con/scala/3/400/72124_pla_knusperhaeuschen_beige_fg_9492_3.jpg');
+$prodotto11 = new Product($fish, 'Tetra Pond Sticks', 19, 'cibo', 'https://shop-cdn-m.mediazs.com/bilder/tetra/pond/sticks/4/400/23513_pla_tetrapond_teichfischfutter_sticks_15l_hs_01_5_4.jpg');
+$prodotto12 = new Product($bird, 'Ponte in legno naturale da appendere', 3, 'accessorio', 'https://shop-cdn-m.mediazs.com/bilder/met/prezzo/ponte/in/legno/naturale/da/appendere/4/400/50550_pla_haengebruecke_aus_naturholz_fg_9143_4.jpg');
 
 //* array dei prodotti
-$products = [$prodotto1, $prodotto2, $prodotto3, $prodotto4, $prodotto5, $prodotto6, $prodotto7, $prodotto8];
+$products = [$prodotto1, $prodotto2, $prodotto3, $prodotto4, $prodotto5, $prodotto6, $prodotto7, $prodotto8, $prodotto9, $prodotto10, $prodotto11, $prodotto12];
 
 ?>
 
@@ -55,11 +60,10 @@ $products = [$prodotto1, $prodotto2, $prodotto3, $prodotto4, $prodotto5, $prodot
                         </figure>
                         <p class="product-for">Prodotto per: <?= $product->animal->icon ?></p>
                         <p class="price"> Prezzo: <strong><?= $product->getPrice() ?></strong></p>
-                        <p class="product-type">Tipo di articolo: <?= $product->getType() ?></p>
+                        <p class="product-type">Tipo di articolo: <i><?= $product->getType() ?></i></p>
                     </div>
                 </div>
             <?php endforeach ?>
-            
         </div>
     </div>
 </body>

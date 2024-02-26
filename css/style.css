@@ -62,7 +62,6 @@ figure {
 
 .title {
     font-size: 1.5rem;
-    text-shadow: 0 0 5px white;
     margin-bottom: 1.5rem;
     text-align: center;
     height: 60px;
@@ -70,13 +69,11 @@ figure {
 
 .product-for {
     font-size: .9rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .product-for i {
     font-size: 2rem;
+    margin-left: 5px;
 }
 
 .price {
@@ -85,4 +82,8 @@ figure {
 
 .product-type {
     font-size: .9rem;
+}
+
+.product-type i {
+    font-weight: bold;
 }

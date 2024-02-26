@@ -21,7 +21,7 @@ class Animal
         } else if ($category == 'fish') {
             $this->icon = '<i style="color: red"; class="fa-solid fa-fish-fins"></i>';
         } else {
-            $this->icon = 'animale sconosciuto';
+            $this->icon = $category;
         }
     }
 
