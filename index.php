@@ -12,13 +12,13 @@ class Animal
     
     public function setIcon($category) {
         if($category == 'dog') {
-            $this->icon = '<i class="fa-solid fa-dog"></i>';
+            $this->icon = '<i style="color: brown"; class="fa-solid fa-dog"></i>';
         } else if ($category == 'cat') {
-            $this->icon = '<i class="fa-solid fa-cat"></i>';
+            $this->icon = '<i style="color: grey; class="fa-solid fa-cat"></i>';
         } else if ($category == 'bird') {
-            $this->icon = '<i class="fa-solid fa-kiwi-bird"></i>';
+            $this->icon = '<i style="color: lightblue; class="fa-solid fa-kiwi-bird"></i>';
         } else if ($category == 'fish') {
-            $this->icon = '<i class="fa-solid fa-fish-fins"></i>';
+            $this->icon = '<i style="color: blue; class="fa-solid fa-fish-fins"></i>';
         } else {
             $this->icon = 'animale sconosciuto';
         }
@@ -96,6 +96,9 @@ $prodotto1 = new Product($dog, 'Royal Canin Mini Adult', 25, 'cibo', 'https://ar
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' integrity='sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==' crossorigin='anonymous'/>
     <!-- stile -->
     <link rel="stylesheet" href="css/style.css">
@@ -104,12 +107,69 @@ $prodotto1 = new Product($dog, 'Royal Canin Mini Adult', 25, 'cibo', 'https://ar
     <div class="container">
         <div class="row">
             <div class="card">
-                <p><?= $prodotto1->title ?></p>
-                <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
-                <p>Prodotto per: <?= $prodotto1->animal->icon ?></p>
-                <p> Prezzo: <?= $prodotto1->getPrice() ?></p>
-                <p>Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
             </div>
+            <div class="card">
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3 class="title"><?= $prodotto1->title ?></h3>
+                    <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                    <p class="product-for">Prodotto per: <?= $prodotto1->animal->icon ?></p>
+                    <p class="price"> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                    <p class="product-type">Tipo di articolo: <?= $prodotto1->getType() ?></p>
+                </div>
+            </div>
+            
         </div>
     </div>
 </body>
