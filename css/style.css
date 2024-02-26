@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: sandybrown;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 4rem auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex-basis: 25%;
+}
+
+.product-img {
+    max-width: 100%;
+    display: block;
+}

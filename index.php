@@ -72,6 +72,10 @@ class Product
         return '€' . $this->price;
     }
 
+    public function getType() {
+        return ucfirst($this->type);
+    }
+
 }
 
 
@@ -83,7 +87,6 @@ $fish = new Fish('fish');
 $prodotto1 = new Product($dog, 'Royal Canin Mini Adult', 25, 'cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000');
 var_dump($prodotto1);
 
-echo $prodotto1->getPrice();
 
 ?>
 
@@ -93,8 +96,20 @@ echo $prodotto1->getPrice();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' integrity='sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==' crossorigin='anonymous'/>
+    <!-- stile -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <p><?= $prodotto1->title ?></p>
+                <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                <p> Prezzo: <?= $prodotto1->getPrice() ?></p>
+                <p>Tipo di articolo: <?= $prodotto1->getType() ?></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
