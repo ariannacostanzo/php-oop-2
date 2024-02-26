@@ -2,7 +2,7 @@
 
 class Animal
 {
-    protected $icon;
+    public $icon;
     public $category;
 
     public function __construct($category){
@@ -85,7 +85,7 @@ $bird = new Bird('bird');
 $fish = new Fish('fish');
 
 $prodotto1 = new Product($dog, 'Royal Canin Mini Adult', 25, 'cibo', 'https://arcaplanet.vtexassets.com/arquivos/ids/284621/Mini-Adult.jpg?v=638182891693570000');
-var_dump($prodotto1);
+
 
 
 ?>
@@ -106,6 +106,7 @@ var_dump($prodotto1);
             <div class="card">
                 <p><?= $prodotto1->title ?></p>
                 <img class="product-img" src="<?= $prodotto1->image?>" alt="<?= $prodotto1->title ?>">
+                <p>Prodotto per: <?= $prodotto1->animal->icon ?></p>
                 <p> Prezzo: <?= $prodotto1->getPrice() ?></p>
                 <p>Tipo di articolo: <?= $prodotto1->getType() ?></p>
             </div>
